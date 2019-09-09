@@ -92,18 +92,18 @@ function NebRNGAimBot:draw()
 	  self.weapon.aimAngle = aimAngle
 	  
 	  world.debugLine(firePosition, vec2.add(firePosition, vec2.mul(vec2.norm(self:idealAimVector()), 3)), "yellow")
-	else
-	  self.weapon.stance.allowRotate = false
-	  self.weapon.stance.allowFlip = false
-	  local predictedAimPos = self.predictedPosition or activeItem.ownerAimPosition()
-	  aimVec[1] = aimVec[1] * self.directionToTarget
-	  self.weapon.aimDirection = self.directionToTarget
+    elseif self.targets and self.targets[1] then
+      self.weapon.stance.allowRotate = false
+      self.weapon.stance.allowFlip = false
+      aimVec[1] = aimVec[1] * self.directionToTarget
+      self.weapon.aimDirection = self.directionToTarget
       self.weapon.aimAngle = vec2.angle(aimVec)
-	  
-	  i = (i % 2) + 1
-	  sb.setLogMap("Test"..i, sb.print(aimVec))
-	  world.debugLine(firePosition, vec2.add(firePosition, vec2.mul(vec2.norm(self:idealAimVector()), 3)), "green")
-	end
+
+      world.debugLine(firePosition, vec2.add(firePosition, vec2.mul(vec2.norm(self:idealAimVector()), 3)), "green")
+    else
+      self.weapon.stance.allowRotate = true
+      self.weapon.stance.allowFlip = true
+    end
 	
     --Code for calculating which cursor to use
 	--In the while loop to avoid conflict with primary
@@ -303,7 +303,7 @@ function NebRNGAimBot:idealAimVector(inaccuracy)
     local target = self.targets[1]
     local targetDistance = world.distance(world.entityMouthPosition(target), firePosition)
     local targetMagnitude = world.magnitude(firePosition, world.entityMouthPosition(target))
-    self.directionToTarget = targetDistance[1] / math.abs(targetDistance[1])
+    self.directionToTarget = util.toDirection(targetDistance[1])
 	if targetMagnitude >= 1 then
       local targetVelocity = world.entityVelocity(target)
 	  -- Essential to calculate the projectile speed
