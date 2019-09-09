@@ -18,7 +18,7 @@
   "animationScripts" : [ "/items/active/effects/entitymarker.lua" ],
   
   "ability" : {
-    "name" : "Predicted Aim",
+    "name" : "Dead Eye",
     "type" : "rngbows_aimprediction",
     "scripts" : ["/items/active/weapons/bow/abilities/rngbows/aimprediction/aimprediction.lua"],
     "class" : "NebRNGAimBot",
