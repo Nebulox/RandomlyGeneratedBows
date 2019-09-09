@@ -1,0 +1,121 @@
+//Animation for randomly generated bows, to allow for random parts, and such along with a loosed frame
+{
+  "globalTagDefaults" : {
+    "paletteSwaps" : "",
+    "directives" : ""
+  },
+  
+  "animatedParts" : {
+    "stateTypes" : {
+      "bow" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {},
+          "loosed" : {}
+        }
+      }
+    },
+	
+    "parts" : {
+      "topLimb" : {
+        "properties" : {
+          "zLevel" : 2,
+          "centered" : true,
+		  "offset" : [0.625, 0.0],
+          "transformationGroups" : ["weapon"]
+        },
+        "partStates" : {
+          "bow" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:<drawFrame><paletteSwaps><directives>"
+              }
+            },
+            "loosed" : {
+              "properties" : {
+                "image" : "<partImage>:loosed<paletteSwaps><directives>"
+              }
+            }
+          }
+        }
+	  },
+      "bottomLimb" : {
+        "properties" : {
+          "zLevel" : 1,
+          "centered" : true,
+          "offset" : [0.625, 0.0],
+          "transformationGroups" : ["weapon"]
+        },
+        "partStates" : {
+          "bow" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:<drawFrame>?flipy<paletteSwaps><directives>"
+              }
+            },
+            "loosed" : {
+              "properties" : {
+                "image" : "<partImage>:loosed?flipy<paletteSwaps><directives>"
+              }
+            }
+          }
+        }
+      },
+      "string" : {
+        "properties" : {
+          "zLevel" : 0,
+          "centered" : true,
+		  "offset" : [0.625, 0.0],
+          "transformationGroups" : ["weapon"]
+        },
+        "partStates" : {
+          "bow" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:<drawFrame><paletteSwaps><directives>"
+              }
+            },
+            "loosed" : {
+              "properties" : {
+                "image" : "<partImage>:loosed<paletteSwaps><directives>"
+              }
+            }
+          }
+        }
+	  },
+      "arrow" : {
+        "properties" : {
+          "zLevel" : 3,
+          "centered" : true,
+		  "offset" : [0.625, 0.0],
+          "transformationGroups" : ["weapon"]
+        },
+        "partStates" : {
+          "bow" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:<drawFrame><paletteSwaps><directives>"
+              }
+            },
+            "loosed" : {
+              "properties" : {
+                "image" : "<partImage>:loosed<paletteSwaps><directives>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "weapon" : {}
+  },
+
+  "sounds" : {
+    "draw" : [ "/sfx/gun/bow_draw1.ogg", "/sfx/gun/bow_draw2.ogg", "/sfx/gun/bow_draw3.ogg" ],
+    "ready" : [ "/sfx/melee/timepierce_windup.ogg" ],
+    "release" : [ "/sfx/gun/bow_loose.ogg" ],
+    "perfectRelease" : [ "/sfx/gun/bow_loose_perfect.ogg" ]
+  }
+}

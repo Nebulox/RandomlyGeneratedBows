@@ -1,0 +1,30 @@
+[
+  //======================================================================================================================
+  //	RNG BOW ABILITIES
+  //======================================================================================================================
+  {
+	"op": "add",
+	"path": "/rngbows_warppointarrow",
+	"value": "/items/active/weapons/bow/abilities/rngbows/warppointarrow/warppointarrow.weaponability"
+  },
+  {
+	"op": "add",
+	"path": "/rngbows_reboundingarrow",
+	"value": "/items/active/weapons/bow/abilities/rngbows/reboundingarrow/nockreboundingarrow.weaponability"
+  },
+  {
+	"op": "add",
+	"path": "/rngbows_backpedal",
+	"value": "/items/active/weapons/bow/abilities/rngbows/backpedal/backpedal.weaponability"
+  },
+  {
+	"op": "add",
+	"path": "/rngbows_shotbowarrow",
+	"value": "/items/active/weapons/bow/abilities/rngbows/shotbowarrow/nockshotbowarrow.weaponability"
+  },
+  {
+	"op": "add",
+	"path": "/rngbows_aimprediction",
+	"value": "/items/active/weapons/bow/abilities/rngbows/aimprediction/aimprediction.weaponability"
+  }
+]
