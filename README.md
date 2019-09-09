@@ -17,5 +17,25 @@ New alternate abilities (As of upload):
   - Warppoint Arrows, charge an arrow and teleport to its explosion point
 - Rare:
   - All of the above
+
+Creator:
+- Nebulox
+  
+Contributors:
+- Loib
+  - Creation of some bow limbs and arrows
+  - Initial ideas
+  - Assistance in creation of the icon, and other buildscript nonsense
+- Aegonian
+  - Creation of some of the base scripts
+  - Assisting in script development and other stuff
+- Degranon
+  - Tons of help in the development of alts
+  - Bugfixing
+  - Assistance and ideas
+- zetaPRIME
+  - Assistance in aim prediction and some calculations
+- Starbound Discord Server, THEA Discord Server and The Forge Discord Server
+  - Ideas for bow abilties
   
 This document will need to be updated in the future.
