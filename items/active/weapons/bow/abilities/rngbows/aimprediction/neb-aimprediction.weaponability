@@ -20,7 +20,7 @@
   "ability" : {
     "name" : "Dead Eye",
     "type" : "rngbows_aimprediction",
-    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/aimprediction/aimprediction.lua"],
+    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/aimprediction/neb-aimprediction.lua"],
     "class" : "NebRNGAimBot",
 	
 	"fireOffset" : [0.75, 0],

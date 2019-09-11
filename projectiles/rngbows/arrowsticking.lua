@@ -68,3 +68,7 @@ function update(dt)
 	end
   end
 end
+
+function setMovementParameters(movementParameters)
+  mcontroller.applyParameters(movementParameters)
+end

@@ -84,15 +84,23 @@ function build(directory, config, parameters, level, seed)
   -- preprocess shared alt attack config
   parameters.altAbility = parameters.altAbility or {}
   parameters.altAbility.drawTimeFactor = valueOrRandom(parameters.altAbility.drawTimeFactor, seed, "drawTimeFactor")
-  parameters.altAbility.powerProjectileTimeFactor = valueOrRandom(parameters.altAbility.drawTimeFactor, seed, "powerProjectileTimeFactor")
+  parameters.altAbility.powerProjectileTimeFactor = valueOrRandom(parameters.altAbility.powerProjectileTimeFactor, seed, "powerProjectileTimeFactor")
   parameters.altAbility.energyPerShotFactor = valueOrRandom(parameters.altAbility.energyPerShotFactor, seed, "energyPerShotFactor")
   parameters.altAbility.holdEnergyUsageFactor = valueOrRandom(parameters.altAbility.holdEnergyUsageFactor, seed, "holdEnergyUsageFactor")
-
+  parameters.altAbility.splitCountFactor = valueOrRandom(parameters.altAbility.splitCountFactor, seed, "splitCountFactor")
+  parameters.altAbility.arrowSplitAngleFactor = valueOrRandom(parameters.altAbility.arrowSplitAngleFactor, seed, "arrowSplitAngleFactor")
+  
   config.altAbility.drawTime = scaleConfig(parameters.altAbility.drawTimeFactor, config.altAbility.drawTime)
   config.altAbility.powerProjectileTime = scaleConfig(parameters.altAbility.powerProjectileTimeFactor, config.altAbility.powerProjectileTime)
   config.altAbility.energyPerShot = scaleConfig(parameters.altAbility.energyPerShotFactor, config.altAbility.energyPerShot) or 0
   config.altAbility.holdEnergyUsage = scaleConfig(parameters.altAbility.holdEnergyUsageFactor, config.altAbility.holdEnergyUsage) or 0
 
+  -- arrow rain specific stuffs
+  if config.altAbility.splitCount then
+    config.altAbility.splitCount = scaleConfig(parameters.altAbility.splitCountFactor, config.altAbility.splitCount)
+    config.altAbility.arrowSplitAngle = scaleConfig(parameters.altAbility.arrowSplitAngleFactor, config.altAbility.arrowSplitAngle)
+  end
+  
   -- preprocess melee primary attack config
   if config.primaryAbility.damageConfig and config.primaryAbility.damageConfig.knockbackRange then
     config.primaryAbility.damageConfig.knockback = scaleConfig(parameters.primaryAbility.drawTimeFactor, config.primaryAbility.damageConfig.knockbackRange)
@@ -183,7 +191,7 @@ function build(directory, config, parameters, level, seed)
   parameters.altAbility.specialAbility.projectileType = parameters.altAbility.specialAbility.projectileType
   
 
-  -- set gun part offsets
+  -- set part offsets
   local partImagePositions = {}
   if builderConfig.gunParts then
     construct(config, "animationCustom", "animatedParts", "parts")
@@ -225,7 +233,7 @@ function build(directory, config, parameters, level, seed)
   end
 
   -- set price
-  config.price = (config.price or 0) * root.evalFunction("itemLevelPriceMultiplier", configParameter("level", 1))
+  config.price = (config.price or 0) * root.evalFunction("itemLevelPriceMultiplier", configParameter("level", 1)) + 7
 
   return config, parameters
 end

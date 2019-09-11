@@ -125,11 +125,6 @@
     },
     "nameGenerator" : "bownames.config:nameGen",
     "animationParts" : {
-      "string" : {
-        "path" : "strings/<variant>.png",
-        "variants" : 2,
-        "paletteSwap" : false
-      },
       "topLimb" : {
         "path" : "limbs/<variant>.png",
         "variants" : 23,
@@ -138,6 +133,11 @@
       "bottomLimb" : {
         "path" : "limbs/<variant>.png",
         "variants" : 23,
+        "paletteSwap" : false
+      },
+      "string" : {
+        "path" : "strings/<variant>.png",
+        "variants" : 2,
         "paletteSwap" : false
       },
       "arrow" : {
@@ -151,7 +151,8 @@
       "rngbows_reboundingarrow",
       "rngbows_shotbowarrow",
       "rngbows_backpedal",
-	  "rngbows_aimprediction"
+	  "rngbows_aimprediction",
+	  "rngbows_arrowrain"
     ],
     "palette" : "/items/active/weapons/colors/melee.weaponcolors",
     "iconDrawables" : [ "topLimb", "bottomLimb", "string", "arrow" ]

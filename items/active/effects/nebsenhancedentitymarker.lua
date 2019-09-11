@@ -36,7 +36,9 @@ function update()
 		end
 		self.particleTimer = self.particleTimer
 		if self.particleTimer >= entityMarker.particles.particleTimer then
-		  self.particleTimer = 0
+		  if entityMarker.particles.particleLoop then
+		    self.particleTimer = 0
+		  end
 		
 	      localAnimator.spawnParticle(entityMarker.particles.particleOnMark)
 		end

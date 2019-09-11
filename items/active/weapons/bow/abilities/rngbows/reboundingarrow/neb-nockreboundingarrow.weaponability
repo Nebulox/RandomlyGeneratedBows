@@ -65,7 +65,7 @@
   "ability" : {
     "name" : "Nock Rebounding Arrow",
     "type" : "rngbows_reboundingarrow",
-    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/nockaltarrow/nockaltarrow.lua"],
+    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/nockaltarrow/neb-nockaltarrow.lua"],
     "class" : "NebNockedArrow",
 
 	"adaptedAbilityIndex" : 1,	//Which ability to adapt (1 = primary, 2 = secondary)

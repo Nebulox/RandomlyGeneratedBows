@@ -102,11 +102,6 @@
   "builderConfig" : [{
     "nameGenerator" : "bownames.config:nameGen",
     "animationParts" : {
-      "string" : {
-        "path" : "strings/<variant>.png",
-        "variants" : 2,
-        "paletteSwap" : false
-      },
       "topLimb" : {
         "path" : "limbs/<variant>.png",
         "variants" : 23,
@@ -115,6 +110,11 @@
       "bottomLimb" : {
         "path" : "limbs/<variant>.png",
         "variants" : 23,
+        "paletteSwap" : false
+      },
+      "string" : {
+        "path" : "strings/<variant>.png",
+        "variants" : 2,
         "paletteSwap" : false
       },
       "arrow" : {

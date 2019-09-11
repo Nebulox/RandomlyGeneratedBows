@@ -19,7 +19,7 @@
   "ability" : {
     "name" : "Nock More Arrows",
     "type" : "rngbows_shotbowarrow",
-    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/nockaltarrow/nockaltarrow.lua"],
+    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/nockaltarrow/neb-nockaltarrow.lua"],
     "class" : "NebNockedArrow",
 
 	"adaptedAbilityIndex" : 1,	//Which ability to adapt (1 = primary, 2 = secondary)

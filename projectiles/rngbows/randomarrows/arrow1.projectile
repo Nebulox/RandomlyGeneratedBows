@@ -18,5 +18,7 @@
     }
   ],
   "damageKind" : "bow",
-  "hydrophobic" : false
+  "hydrophobic" : false,
+  
+  "scripts" : [ "/projectiles/rngbows/arrowfunctions.lua" ]
 }

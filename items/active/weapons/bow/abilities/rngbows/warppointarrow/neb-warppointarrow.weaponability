@@ -70,7 +70,7 @@
     "type" : "rngbows_warppointarrow",
     "class" : "NebRNGWarpPoint",
     "name" : "Warp-Point Arrow",
-    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/warppointarrow/warppointarrow.lua"],
+    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/warppointarrow/neb-warppointarrow.lua"],
 	
 	"fireOffset" : [0.75, 0],
 

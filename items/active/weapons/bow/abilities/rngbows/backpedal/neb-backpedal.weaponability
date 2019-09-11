@@ -36,7 +36,7 @@
   "ability" : {
     "name" : "Backpedal",
     "type" : "rngbows_backpedal",
-    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/backpedal/backpedal.lua"],
+    "scripts" : ["/items/active/weapons/bow/abilities/rngbows/backpedal/neb-backpedal.lua"],
     "class" : "FlipSlash",
 
     "cooldownTime" : 0.5,
