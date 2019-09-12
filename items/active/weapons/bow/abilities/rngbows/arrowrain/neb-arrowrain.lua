@@ -45,7 +45,7 @@ function NebArrowRain:update(dt, fireMode, shiftHeld)
   self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
 
   if not self.weapon.currentAbility and self.fireMode == (self.activatingFireMode or self.abilitySlot) and self.cooldownTimer == 0 and (self.drawTimer > 0 or not status.resourceLocked("energy")) then
-    self:setState(self.draw)
+    self:setState(self.windup)
   end
 end
 
@@ -59,6 +59,16 @@ function NebArrowRain:reset()
   animator.stopAllSounds("draw")
   animator.stopAllSounds("ready")
   self.weapon:setStance(self.stances.idle)
+end
+
+function NebArrowRain:windup()
+  self.weapon:setStance(self.stances.windup)
+
+  activeItem.emote("sleep")
+
+  util.wait(self.stances.windup.duration)
+
+  self:setState(self.draw)
 end
 
 function NebArrowRain:draw()

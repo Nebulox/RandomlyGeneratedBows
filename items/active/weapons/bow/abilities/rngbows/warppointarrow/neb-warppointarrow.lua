@@ -90,6 +90,18 @@ function NebRNGWarpPoint:draw()
 	elseif self.drawTimer > (self.drawTime) then
 	  status.overConsumeResource("energy", self.holdEnergyUsage * self.dt)
 	end
+	
+	--Code for calculating which cursor to use
+    if not self.hasChargedCursor then
+      local cursorFrame = math.max(math.ceil(self.drawTimer * #self.cursorFrames), 1)
+      activeItem.setCursor(self.cursorFrames[cursorFrame])
+	  if cursorFrame == #self.cursorFrames then
+	    self.hasChargedCursor = true
+	  end
+    else
+      activeItem.setCursor(self.cursorFrames[#self.cursorFrames])
+    end
+  
 	--If the bow is almost fully drawn, stop the draw sound and play the ready sound
 	--Do this slightly before the draw is ready so the player can release when they hear the sound
 	--This way, the sound plays at the same moment in the draw phase for every bow regardless of draw time
@@ -115,6 +127,8 @@ function NebRNGWarpPoint:draw()
 end
 
 function NebRNGWarpPoint:fire()
+  self.hasChargedCursor = false
+  activeItem.setCursor(self.cursorFrames[1])
   self.weapon:setStance(self.stances.fire)
   
   animator.stopAllSounds("chargeLoopAlt")

@@ -74,6 +74,17 @@
 	
 	"fireOffset" : [0.75, 0],
 
+	//Config for animated cursor
+	"cursorFrames" : [
+	  "/cursors/animated/rngbowsinvert/neb-rngbowaltreticle1.cursor",
+	  "/cursors/animated/rngbowsinvert/neb-rngbowaltreticle2.cursor",
+	  "/cursors/animated/rngbowsinvert/neb-rngbowaltreticle3.cursor",
+	  "/cursors/animated/rngbowsinvert/neb-rngbowaltreticle4.cursor",
+	  "/cursors/animated/rngbowsinvert/neb-rngbowaltreticle5.cursor",
+	  "/cursors/animated/rngbowsinvert/neb-rngbowaltreticle6.cursor",
+	  "/cursors/animated/rngbowsinvert/neb-rngbowaltreticle7.cursor"
+	],
+
     "drawTime" : 1.5,				//Time to fully draw the bow
 	"energyPerShot" : 55,			//Total energy consumption for a full draw
 	"holdEnergyUsage" : 15,			//Energy consumption per second while fully drawn
