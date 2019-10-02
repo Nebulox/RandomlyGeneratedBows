@@ -70,6 +70,7 @@
         "duration" : 0.75,
         "armRotation" : -60,
         "weaponRotation" : 0,
+        "aimAngle" : 0,
         "allowRotate" : false,
         "allowFlip" : true,
         "twoHanded" : true

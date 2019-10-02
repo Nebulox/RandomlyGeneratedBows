@@ -6,26 +6,34 @@ require "/scripts/util.lua"
 NebRNGAimBot = WeaponAbility:new()
 
 function NebRNGAimBot:init()
+	--General Init
   self.energyPerShot = self.energyPerShot or 0
   animator.setGlobalTag("directives", config.getParameter("directives", ""))
   self.paletteSwaps = config.getParameter("paletteSwaps")
   self.elementalType = config.getParameter("elementalType")
   self.arrowVariant = config.getParameter("animationParts")
 
+	--Setup the bow functions
   self.drawTimer = 0
   animator.setAnimationState("bow", "idle")
   self.cooldownTimer = 0
   self.aimOutOfReach = false
   self.aimTypeSwitchTimer = 0
   
+	--Setup the marking
   self.maxTargets = 1
   self.projectileSpeed = 0
-  activeItem.setScriptedAnimationParameter("entities", {})
   self.targets = {}
   self.predictedPosition = nil
 
+	--Reset Local Animator
+  activeItem.setScriptedAnimationParameter("entities", {})
+  activeItem.setScriptedAnimationParameter("entityMarker", self.entityMarker)
+
+	--Ensure a proper setup of the weapon
   self:reset()
   
+	--Register the gravity of the projectile
   self.projectileGravityMultiplier = root.projectileGravityMultiplier(self.powerProjectileType or self.altProjectileType)
 
   self.weapon.onLeaveAbility = function()
@@ -35,20 +43,21 @@ end
 
 function NebRNGAimBot:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
-  --world.debugPoint(self:firePosition(), "red")
   
+	--Constantly count down on the cooldown timer
   self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
 
+	--Begin drawing the bow
   if not self.weapon.currentAbility and self.fireMode == (self.activatingFireMode or self.abilitySlot) and self.cooldownTimer == 0 and (self.drawTimer > 0 or not status.resourceLocked("energy")) then
     self:setState(self.draw)
   end
-  sb.setLogMap("Predicted Position", sb.print(self.predictedPosition))
+	
+	--Debug Variables
+	world.debugPoint(self:firePosition(), "red")
+	if self.predictedPosition then
+		world.debugPoint(self.predictedPosition, "yellow")
+	end
 end
-
-function NebRNGAimBot:uninit()
-  self:reset()
-end
-
 function NebRNGAimBot:reset()
   activeItem.setScriptedAnimationParameter("entities", {})
   self.targets = {}
@@ -382,3 +391,8 @@ end
 function NebRNGAimBot:firePosition()
   return vec2.add(mcontroller.position(), activeItem.handPosition(self.fireOffset))
 end
+
+function NebRNGAimBot:uninit()
+  self:reset()
+end
+

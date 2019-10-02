@@ -1,15 +1,14 @@
 {
-  "itemName" : "rarebow",
+  "itemName" : "neb-rarebow",
   "price" : 1320,
   "maxStack" : 1,
   "rarity" : "Rare",
   "description" : "A powerful bow.",
   "shortdescription" : "Rare Bow",
-  "tooltipKind" : "bow",
+  "tooltipKind" : "neb-randombow",
   "category" : "Bow",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","bow"],
-  "level" : 1,
   
   "radioMessagesOnPickup" : [ "pickupbow" ],
 
@@ -25,38 +24,38 @@
     "scripts" : ["/items/active/weapons/bow/abilities/rngbows/rngbowshot.lua"],
     "class" : "NebRNGBowShot",
 	
-	"fireOffset" : [0.75, 0],
-	
-	//Config for animated cursor
-	"cursorFrames" : [
-	  "/cursors/animated/rngbowsrotate/neb-rngbowreticle1.cursor",
-	  "/cursors/animated/rngbowsrotate/neb-rngbowreticle2.cursor",
-	  "/cursors/animated/rngbowsrotate/neb-rngbowreticle3.cursor",
-	  "/cursors/animated/rngbowsrotate/neb-rngbowreticle4.cursor",
-	  "/cursors/animated/rngbowsrotate/neb-rngbowreticle5.cursor",
-	  "/cursors/animated/rngbowsrotate/neb-rngbowreticle6.cursor",
-	  "/cursors/animated/rngbowsrotate/neb-rngbowreticle7.cursor"
-	],
+		"fireOffset" : [0.75, 0],
+		
+		//Config for animated cursor
+		"cursorFrames" : [
+			"/cursors/animated/rngbowsrotate/neb-rngbowreticle1.cursor",
+			"/cursors/animated/rngbowsrotate/neb-rngbowreticle2.cursor",
+			"/cursors/animated/rngbowsrotate/neb-rngbowreticle3.cursor",
+			"/cursors/animated/rngbowsrotate/neb-rngbowreticle4.cursor",
+			"/cursors/animated/rngbowsrotate/neb-rngbowreticle5.cursor",
+			"/cursors/animated/rngbowsrotate/neb-rngbowreticle6.cursor",
+			"/cursors/animated/rngbowsrotate/neb-rngbowreticle7.cursor"
+		],
 
-    "drawTime" : [0.65, 1.5],				//Time to fully draw the bow
-	"powerProjectileTime" : [0.195, 0.275],	//After fully drawing, the bow is super-charged for this long
-	"energyPerShot" : [28, 38],			//Total energy consumption for a full draw
-	"holdEnergyUsage" : [5, 12],			//Energy consumption per second while fully drawn
-	"airborneBonus" : 1.25,			//A dmg multiplier for when airborne
+    "drawTime" : [0.65, 1.5],									//Time to fully draw the bow
+		"powerProjectileTime" : [0.195, 0.275],		//After fully drawing, the bow is super-charged for this long, secretly perfect shot
+		"energyPerShot" : [28, 38],								//Total energy consumption for a full draw
+		"holdEnergyUsage" : [5, 12],							//Energy consumption per second while fully drawn
+		"airborneBonus" : 1.25,										//A dmg multiplier for when airborne
 	
-    "cooldownTime" : 0.4,			//Time between firing and drawing the next arrow
-    "inaccuracy" : 0.0,				//Inaccuracy of the shot
+    "cooldownTime" : 0.2,											//Time between firing and drawing the next arrow
+    "inaccuracy" : 0.0,												//Inaccuracy of the shot
 	
-	"walkWhileFiring" : true,		//If true, prevents the player from running while drawing the bow
-	"useQuiverDamageBonus" : true,	//If true, allows this bow to use quiver damage bonuses
+		"walkWhileFiring" : true,									//If true, prevents the player from running while drawing the bow
+		"useQuiverDamageBonus" : true,						//If true, allows this bow to use quiver damage bonuses
 	
-	"drainEnergyWhilePowerful" : false,	//If true, consume energy while at max power
-	"staticDamageMultiplier" : null,	//If this value is set, arrow damage is independent of draw time and is instead multiplied by this value
-	"dynamicDamageMultiplier" : 1.0,	//All damage is multiplied by this value. Useful for modifying damage using alt ability special arrows
+		"drainEnergyWhilePowerful" : false,				//If true, consume energy while at max power
+		"staticDamageMultiplier" : null,					//If this value is set, arrow damage is independent of draw time and is instead multiplied by this value
+		"dynamicDamageMultiplier" : 1.0,					//All damage is multiplied by this value. Useful for modifying damage using alt ability special arrows
 
     "drawArmFrames" : ["rotation", "swim.2", "swim.2", "swimIdle.1", "swimIdle.1", "swimIdle.1"],
 
-	"projectileCount" : 1,	//Amount of arrows to shoot at once
+		"projectileCount" : 1,										//Amount of arrows to shoot at once
     "projectileParameters" : {
       "knockbackRange" : [2,4],
       "speed" : 85,
@@ -66,7 +65,7 @@
     "powerProjectileParameters" : {
       "knockbackRange" : [2,4],
       "speed" : 100,
-      "power" : 8
+      "power" : 11.5
     },
 
     "stances" : {
@@ -127,12 +126,12 @@
     "animationParts" : {
       "topLimb" : {
         "path" : "limbs/<variant>.png",
-        "variants" : 23,
+        "variants" : 24,
         "paletteSwap" : false
       },
       "bottomLimb" : {
         "path" : "limbs/<variant>.png",
-        "variants" : 23,
+        "variants" : 24,
         "paletteSwap" : false
       },
       "string" : {
@@ -151,8 +150,8 @@
       "rngbows_reboundingarrow",
       "rngbows_shotbowarrow",
       "rngbows_backpedal",
-	  "rngbows_aimprediction",
-	  "rngbows_arrowrain"
+			"rngbows_aimprediction",
+			"rngbows_arrowrain"
     ],
     "palette" : "/items/active/weapons/colors/melee.weaponcolors",
     "iconDrawables" : [ "topLimb", "bottomLimb", "string", "arrow" ]

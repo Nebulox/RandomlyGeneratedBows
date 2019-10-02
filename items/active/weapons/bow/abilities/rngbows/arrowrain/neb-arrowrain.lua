@@ -79,39 +79,39 @@ function NebArrowRain:draw()
 
   while self.fireMode == (self.activatingFireMode or self.abilitySlot) and not status.resourceLocked("energy") do
     if self.walkWhileFiring then
-	  mcontroller.controlModifiers({runningSuppressed = true})
-	end
+			mcontroller.controlModifiers({runningSuppressed = true})
+		end
 
     self.drawTimer = self.drawTimer + self.dt
 
     local drawFrame = math.min(#self.drawArmFrames - 2, math.floor(self.drawTimer / self.drawTime * (#self.drawArmFrames - 1)))
 	
-	--If not yet fully drawn, drain energy quickly
-	if self.drawTimer < self.drawTime then
-	  status.overConsumeResource("energy", self.energyPerShot / self.drawTime * self.dt)
-	
-	--If fully drawn and at peak power, prevent energy regen and set the drawFrame to power charged
-	elseif self.drawTimer > self.drawTime and self.drawTimer <= (self.drawTime + (self.powerProjectileTime or 0)) then
-	  status.setResourcePercentage("energyRegenBlock", 0.6)
-	  drawFrame = #self.drawArmFrames - 1
-	  if self.drainEnergyWhilePowerful then
-		status.overConsumeResource("energy", self.holdEnergyUsage * self.dt) --Optionally drain energy while at max power level
-	  end
-	
-	--If drawn beyond power peak levels, drain energy slowly
-	elseif self.drawTimer > (self.drawTime + (self.powerProjectileTime or 0)) then
-	  status.overConsumeResource("energy", self.holdEnergyUsage * self.dt)
-	end
-	--If the bow is almost fully drawn, stop the draw sound and play the ready sound
-	--Do this slightly before the draw is ready so the player can release when they hear the sound
-	--This way, the sound plays at the same moment in the draw phase for every bow regardless of draw time
-	if self.drawTimer >= (self.drawTime - 0.15) then
-	  animator.stopAllSounds("draw")
-	  if not readySoundPlayed then
-		animator.playSound("ready")
-		readySoundPlayed = true
-	  end
-	end  
+		--If not yet fully drawn, drain energy quickly
+		if self.drawTimer < self.drawTime then
+			status.overConsumeResource("energy", self.energyPerShot / self.drawTime * self.dt)
+		
+		--If fully drawn and at peak power, prevent energy regen and set the drawFrame to power charged
+		elseif self.drawTimer > self.drawTime and self.drawTimer <= (self.drawTime + (self.powerProjectileTime or 0)) then
+			status.setResourcePercentage("energyRegenBlock", 0.6)
+			drawFrame = #self.drawArmFrames - 1
+			if self.drainEnergyWhilePowerful then
+				status.overConsumeResource("energy", self.holdEnergyUsage * self.dt) --Optionally drain energy while at max power level
+			end
+		
+		--If drawn beyond power peak levels, drain energy slowly
+		elseif self.drawTimer > (self.drawTime + (self.powerProjectileTime or 0)) then
+			status.overConsumeResource("energy", self.holdEnergyUsage * self.dt)
+		end
+		--If the bow is almost fully drawn, stop the draw sound and play the ready sound
+		--Do this slightly before the draw is ready so the player can release when they hear the sound
+		--This way, the sound plays at the same moment in the draw phase for every bow regardless of draw time
+		if self.drawTimer >= (self.drawTime - 0.15) then
+			animator.stopAllSounds("draw")
+			if not readySoundPlayed then
+				animator.playSound("ready")
+				readySoundPlayed = true
+			end
+		end  
 	
     --Code for calculating which cursor to use
     if not self.hasChargedCursor then
@@ -144,15 +144,14 @@ function NebArrowRain:draw()
 	
     if drawFrame == 5 then --or whatever the frame is
       animator.setGlobalTag("directives", "?fade=FFFFFFFF=0.1")
-	  --sb.logInfo("jim charle here")
-	else
-	  animator.setGlobalTag("directives", "")
-	end
-	
+		else
+			animator.setGlobalTag("directives", "")
+		end
+		
     self.stances.draw.frontArmFrame = self.drawArmFrames[drawFrame + 1]
-	
-	--world.debugText(drawFrame .. " | " .. sb.printJson(self:perfectTiming()), mcontroller.position(), "red")
-	world.debugText(sb.printJson(self:currentProjectileParameters(), 1), mcontroller.position(), "yellow")
+		
+		--world.debugText(drawFrame .. " | " .. sb.printJson(self:perfectTiming()), mcontroller.position(), "red")
+		world.debugText(sb.printJson(self:currentProjectileParameters(), 1), mcontroller.position(), "yellow")
 	
     coroutine.yield()
   end
