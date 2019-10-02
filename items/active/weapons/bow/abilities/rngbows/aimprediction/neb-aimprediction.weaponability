@@ -59,7 +59,7 @@
 		"staticDamageMultiplier" : null,	//If this value is set, arrow damage is independent of draw time and is instead multiplied by this value
 		"dynamicDamageMultiplier" : 1.1,	//All damage is multiplied by this value. Useful for modifying damage using alt ability special arrows
 
-    "drawArmFrames" : ["rotation", "swim.2", "swim.2", "swimIdle.1", "swimIdle.1", "swimIdle.1"],
+    "drawArmFrames" : ["rotation", "run.2", "swim.2", "swimIdle.1", "swim.1", "swim.1"],
 
 		"projectileCount" : 1,	//Amount of arrows to shoot at once
     "projectileParameters" : {

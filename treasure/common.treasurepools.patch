@@ -4,63 +4,63 @@
 		"op": "add",
 			"path": "/weapon/0/1/pool/-",
 			"value": {
-        {"weight" : 0.06, "pool" : "commonBow"}
+        "weight" : 0.06, "pool" : "commonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/0/1/pool/-",
 			"value": {
-        {"weight" : 0.03, "pool" : "uncommonBow"}
+        "weight" : 0.03, "pool" : "uncommonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/0/1/pool/-",
 			"value": {
-        {"weight" : 0.01, "pool" : "rareBow"}
+        "weight" : 0.01, "pool" : "rareBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/1/1/pool/-",
 			"value": {
-        {"weight" : 0.125, "pool" : "commonBow"}
+        "weight" : 0.125, "pool" : "commonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/1/1/pool/-",
 			"value": {
-        {"weight" : 0.075, "pool" : "uncommonBow"}
+        "weight" : 0.075, "pool" : "uncommonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/1/1/pool/-",
 			"value": {
-        {"weight" : 0.025, "pool" : "rareBow"}
+        "weight" : 0.025, "pool" : "rareBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/2/1/pool/-",
 			"value": {
-        {"weight" : 0.10, "pool" : "commonBow"}
+        "weight" : 0.10, "pool" : "commonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/2/1/pool/-",
 			"value": {
-        {"weight" : 0.065, "pool" : "uncommonBow"}
+        "weight" : 0.065, "pool" : "uncommonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/weapon/2/1/pool/-",
 			"value": {
-        {"weight" : 0.025, "pool" : "rareBow"}
+        "weight" : 0.025, "pool" : "rareBow"
 		}
 	},
 	
@@ -69,42 +69,42 @@
 		"op": "add",
 			"path": "/goodWeapon/0/1/pool/-",
 			"value": {
-        {"weight" : 0.325, "pool" : "uncommonBow"}
+        "weight" : 0.325, "pool" : "uncommonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/goodWeapon/0/1/pool/-",
 			"value": {
-        {"weight" : 0.225, "pool" : "rareBow"}
+        "weight" : 0.225, "pool" : "rareBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/goodWeapon/1/1/pool/-",
 			"value": {
-        {"weight" : 0.125, "pool" : "uncommonBow"}
+        "weight" : 0.125, "pool" : "uncommonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/goodWeapon/1/1/pool/-",
 			"value": {
-        {"weight" : 0.09, "pool" : "rareBow"}
+        "weight" : 0.09, "pool" : "rareBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/goodWeapon/2/1/pool/-",
 			"value": {
-        {"weight" : 0.16, "pool" : "uncommonBow"}
+        "weight" : 0.16, "pool" : "uncommonBow"
 		}
 	},
 	{
 		"op": "add",
 			"path": "/goodWeapon/2/1/pool/-",
 			"value": {
-        {"weight" : 0.14, "pool" : "rareBow"}
+        "weight" : 0.14, "pool" : "rareBow"
 		}
 	},
 	

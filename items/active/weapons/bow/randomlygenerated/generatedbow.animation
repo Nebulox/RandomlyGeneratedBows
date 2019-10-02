@@ -113,8 +113,8 @@
   },
 
   "sounds" : {
-    "draw" : [ "/sfx/gun/bow_draw1.ogg", "/sfx/gun/bow_draw2.ogg", "/sfx/gun/bow_draw3.ogg" ],
-    "ready" : [ "/sfx/melee/timepierce_windup.ogg" ],
+    "draw" : [ "/sfx/gun/nebsrngbows_draw1.ogg", "/sfx/gun/nebsrngbows_draw2.ogg", "/sfx/gun/nebsrngbows_draw3.ogg", "/sfx/gun/nebsrngbows_draw4.ogg", "/sfx/gun/nebsrngbows_draw5.ogg", "/sfx/gun/nebsrngbows_draw6.ogg" ],
+    "ready" : [ "/sfx/gun/randombow_fulltensionping.ogg" ],
     "release" : [ "/sfx/gun/bow_loose.ogg" ],
     "perfectRelease" : [ "/sfx/gun/bow_loose_perfect.ogg" ]
   }
