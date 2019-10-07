@@ -97,7 +97,7 @@
     }
   },
 
-  "builder" : "/items/buildscripts/buildrandombow.lua",
+  "builder" : "/items/buildscripts/neb-buildrandombow.lua",
   "builderConfig" : [{
     "nameGenerator" : "bownames.config:nameGen",
     "animationParts" : {
