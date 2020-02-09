@@ -111,35 +111,41 @@
 	//Bow Pools
   {
     "op": "add",
-    "path": "/commonBow/-",
+    "path": "/commonBow",
     "value": [
+	  [
       0, {
         "pool": [
           {"weight" : 1, "item" : "neb-commonbow"}
         ]
       }
+	  ]
     ]
   },
   {
     "op": "add",
-    "path": "/uncommonBow/-",
+    "path": "/uncommonBow",
     "value": [
+	  [
       0, {
         "pool": [
           {"weight" : 1, "item" : "neb-uncommonbow"}
         ]
       }
+	  ]
     ]
   },
   {
     "op": "add",
-    "path": "/rareBow/-",
+    "path": "/rareBow",
     "value": [
+	  [
       0, {
         "pool": [
           {"weight" : 1, "item" : "neb-rarebow"}
         ]
       }
+	  ]
     ]
   }
 ]

@@ -69,7 +69,7 @@
   "ability" : {
     "type" : "rngbows_warppointarrow",
     "class" : "NebRNGWarpPoint",
-    "name" : "Warp-Point Arrow",
+    "name" : "Blink Arrow",
     "scripts" : ["/items/active/weapons/bow/abilities/rngbows/warppointarrow/neb-warppointarrow.lua"],
 	
 	"fireOffset" : [0.75, 0],

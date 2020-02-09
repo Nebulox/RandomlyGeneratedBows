@@ -56,7 +56,7 @@ end
 function NebBowShot:draw()
   self.weapon:setStance(self.stances.draw)
 
-	animator.setSoundPitch("draw", 1, self.drawTime)
+  animator.setSoundPitch("draw", 1, self.drawTime)
   animator.playSound("draw", -1)
   local readySoundPlayed = false
 
