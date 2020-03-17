@@ -111,7 +111,7 @@ function NebRNGBowShot:draw()
 		
 		--Debug Variables
 		world.debugText(drawFrame .. " | " .. sb.printJson(self:perfectTiming()), mcontroller.position(), "red")
-		world.debugText(sb.printJson(self:currentProjectileParameters(), 1), mcontroller.position(), "yellow")
+		--world.debugText(sb.printJson(self:currentProjectileParameters(), 1), mcontroller.position(), "yellow")
 	
     coroutine.yield()
   end

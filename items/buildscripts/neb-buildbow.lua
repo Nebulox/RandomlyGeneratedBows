@@ -13,7 +13,7 @@ function build(directory, config, parameters, level, seed)
     end
   end
 
-  if level and not configParameter("fixedLevel", true) then
+  if level and not configParameter("fixedLevel", false) then
     parameters.level = level
   end
 

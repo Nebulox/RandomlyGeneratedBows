@@ -9,6 +9,7 @@
   "category" : "Bow",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","bow"],
+  "level" : 1,
   
   "radioMessagesOnPickup" : [ "pickupbow" ],
 
