@@ -108,6 +108,6 @@
   
   "renderLayer" : "Monster+1",
   
-  "scripts" : [ "/projectiles/scripts/thea-stickingprojectile.lua" ],
+  "scripts" : [ "/projectiles/rngbows/arrowsticking" ],
   "searchRadius" : 0.1
 }

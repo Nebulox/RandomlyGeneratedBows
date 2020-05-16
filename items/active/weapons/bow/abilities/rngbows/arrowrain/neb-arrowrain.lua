@@ -13,6 +13,7 @@ function NebArrowRain:init()
   self.arrowVariant = config.getParameter("animationParts")
 
   self.drawTimer = 0
+  self.minDrawTime = self.drawTime / 10
   animator.setAnimationState("bow", "idle")
   self.cooldownTimer = 0
   self.clusterProjectileType = self.altProjectileType
@@ -157,7 +158,11 @@ function NebArrowRain:draw()
   end
 
   animator.stopAllSounds("draw")
-  self:setState(self.fire)
+  if self.drawTimer < self.minDrawTime then
+    self:setState(self.reset)
+  else
+    self:setState(self.fire)
+  end
 end
 
 function NebArrowRain:fire()
@@ -362,36 +367,36 @@ function NebArrowRain:firePosition()
 end
 
 function NebArrowRain:splitAngle(up, low, n)
-    assert(up >= low)
-    assert(n > 0)
-    local angles = {}
-    local mid = low + (up - low) / 2.0
-    print(string.format("n == %s mid=%s", n, mid))
-    
-    if n == 1 then
-        return {mid}
-    else
-        table.insert(angles, self:splitAngle(up, mid, math.floor(n / 2)))
-        if n % 2 == 1 then
-            table.insert(angles, mid)
-        end
-        table.insert(angles, self:splitAngle(mid, low, math.floor(n / 2)))
-        
-        return angles
+  assert(up >= low)
+  assert(n > 0)
+  local angles = {}
+  local mid = low + (up - low) / 2.0
+  print(string.format("n == %s mid=%s", n, mid))
+   
+  if n == 1 then
+    return {mid}
+  else
+    table.insert(angles, self:splitAngle(up, mid, math.floor(n / 2)))
+    if n % 2 == 1 then
+      table.insert(angles, mid)
     end
+    table.insert(angles, self:splitAngle(mid, low, math.floor(n / 2)))
+      
+    return angles
+  end
 end
 
 function NebArrowRain:unpack(tab)
-    local unpacked = {}
-    for k, v in ipairs(tab) do
-        if type(v) == "table" then
-            local t = self:unpack(v)
-            for _, vv in ipairs(t) do
-                table.insert(unpacked, vv)
-            end
-        else
-            table.insert(unpacked, v)
-        end
+  local unpacked = {}
+  for k, v in ipairs(tab) do
+    if type(v) == "table" then
+      local t = self:unpack(v)
+      for _, vv in ipairs(t) do
+        table.insert(unpacked, vv)
+      end
+    else
+      table.insert(unpacked, v)
     end
-    return unpacked
+  end
+  return unpacked
 end
