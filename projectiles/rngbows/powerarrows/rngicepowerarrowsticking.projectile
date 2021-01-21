@@ -108,6 +108,6 @@
   
   "renderLayer" : "Monster+1",
   
-  "scripts" : [ "/projectiles/rngbows/arrowsticking" ],
+  "scripts" : [ "/projectiles/rngbows/arrowsticking.lua" ],
   "searchRadius" : 0.1
 }
