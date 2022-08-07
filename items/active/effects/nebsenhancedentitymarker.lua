@@ -11,7 +11,7 @@ function update()
   if markerImage then
     local entities = animationConfig.animationParameter("entities") or {}
     entities = util.filter(entities, world.entityExists)
-    for _,entityId in pairs(entities) do
+    for _, entityId in pairs(entities) do
   	  local markerDrawable = {
         image = markerImage,
         centered = true,
